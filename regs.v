@@ -12,6 +12,11 @@ module regs( data, ld_reg, dr, sr1, sr2, clk, rst, sr1_out, sr2_out);
     // actual internal registers
     reg [15:0]regs[0:7];
 
+    // TODO: find out whether this is the desired behavior or not
+    // I think its fine, since sr1/2 are output of the control store
+    // which is only updated on posedge clock.
+    // Otherwise we have to latch updating the output of sr1/2 to
+    // posedge clock as well.
     assign sr1_out = regs[sr1];
     assign sr2_out = regs[sr2];
 
