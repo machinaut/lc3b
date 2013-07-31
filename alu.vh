@@ -4,9 +4,9 @@
 `define _alu_vh_
 
 // ALU operations
-`define ALUK_ADD   2'b00 // A + B
-`define ALUK_AND   2'b01 // A & B
-`define ALUK_XOR   2'b10 // A ^ B
-`define ALUK_PASSA 2'b11 // A
+`define alu_add 2'b00 // a + b
+`define alu_and 2'b01 // a & b
+`define alu_xor 2'b10 // a ^ b
+`define alu_a   2'b11 // a
 
 `endif //_alu_vh_

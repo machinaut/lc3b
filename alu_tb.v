@@ -21,25 +21,25 @@ module alu_tb;
         $dumpvars(0, a);
         #5 gate_alu = 1; #5
         // ADD tests
-        aluk = `ALUK_ADD;
+        aluk = `alu_add;
         #5 A = 16'd1; B = 16'd2; #5 `TEST(1+2)
         #5 A = 16'd5; B = 16'd7; #5 `TEST(5+7)
         #5 A = 16'h8000; B = 16'h8000; #5 `TEST(16'd0) // overflow
         #5 A = 16'h8456; B = 16'h8123; #5 `TEST(16'h579) // overflow
         // AND tests
-        aluk = `ALUK_AND;
+        aluk = `alu_and;
         #5 A = 16'h1; B = 16'h2; #5 `TEST(16'h0)
         #5 A = 16'hA; B = 16'h7; #5 `TEST(16'h2)
         #5 A = 16'hffff; B = 16'h0; #5 `TEST(16'h0)
         #5 A = 16'hffff; B = 16'hbead; #5 `TEST(16'hbead)
         // XOR tests
-        aluk = `ALUK_XOR;
+        aluk = `alu_xor;
         #5 A = 16'h1; B = 16'h2; #5 `TEST(16'h1^16'h2)
         #5 A = 16'hA; B = 16'h7; #5 `TEST(16'hA^16'h7)
         #5 A = 16'hffff; B = 16'h0; #5 `TEST(16'hffff^16'h0)
         #5 A = 16'hffff; B = 16'hbead; #5 `TEST(16'hffff^16'hbead)
         // PASSA tests
-        aluk = `ALUK_PASSA;
+        aluk = `alu_a;
         #5 A = 16'h1; B = 16'h2; #5 `TEST(16'h1)
         #5 A = 16'hA; B = 16'h7; #5 `TEST(16'hA)
         #5 A = 16'hdead; B = 16'h0; #5 `TEST(16'hdead)
